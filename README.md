@@ -4,10 +4,11 @@ huginn-SunlightLegislatorAgent
 
 
 
-The SunlightLegislatorAgent uses the Sunlight Foundation Congress API to track the actions of a legislator.
+The SunlightLegislatorAgent uses the Sunlight Foundation Congress API to track the actions of a legislator. Will report back on any votes made or actions on bills sponsored or cosponsored by the
+legislator.
 
   **You need a Sunlight Foundation API Token:** [http://sunlightfoundation.com/api/](http://sunlightfoundation.com/api/)
- 
+
   **You need to provide a** `legislator_bioguide_id` for the legislator you wish to keep tabs on. [You can search for them here.](http://legislator.wolvesintheserverroom.com/)
 
 
