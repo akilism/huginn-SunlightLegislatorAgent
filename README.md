@@ -4,8 +4,7 @@ huginn-SunlightLegislatorAgent
 
 
 
-The SunlightLegislatorAgent uses the Sunlight Foundation Congress API to track the actions of a legislator. Will report back on any votes made or actions on bills sponsored or cosponsored by the
-legislator.
+The SunlightLegislatorAgent uses the Sunlight Foundation Congress API to track the actions of a legislator. Will report back on any votes made, or actions on bills sponsored or cosponsored by the legislator.
 
   **You need a Sunlight Foundation API Token:** [http://sunlightfoundation.com/api/](http://sunlightfoundation.com/api/)
 
@@ -18,7 +17,7 @@ legislator.
   * `expected_update_period_in_days`:  is maximum number of days that you would expect to pass between updates from this agent.
 
 
-  It's events look like this: *(Where only either vote, sponsored_bill, or cosponsored_bill available depending on the type.)*
+  It's events look like this: *(Where only one of the following will be available depending on the type: `vote`, `sponsored_bill`, or `cosponsored_bill`.)*
 
           {
             'legislator_bioguide_id' => 'G000555',
