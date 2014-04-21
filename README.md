@@ -17,7 +17,7 @@ The SunlightLegislatorAgent uses the Sunlight Foundation Congress API to track t
   * `expected_update_period_in_days`:  is maximum number of days that you would expect to pass between updates from this agent.
 
 
-  It's events look like this: *(Where only one of the following will be available depending on the type: `vote`, `sponsored_bill`, or `cosponsored_bill`.)*
+  It's events look like this: *(Where only one of the following will be available depending on the type: `vote`, `sponsored_bill`, or `cosponsored_bill`.)* 
 
           {
             'legislator_bioguide_id' => 'G000555',
@@ -99,3 +99,6 @@ The SunlightLegislatorAgent uses the Sunlight Foundation Congress API to track t
               },
             'cosponsored_bill' => # Same format as sponsored_bill.
           }
+
+
+  More information on the returned fields can be found at: [https://sunlightlabs.github.io/congress/](https://sunlightlabs.github.io/congress/)
