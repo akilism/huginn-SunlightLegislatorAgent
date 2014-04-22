@@ -204,7 +204,7 @@ module Agents
 
       if is_sponsor
         raw_bills = get_bill_information(legislator_bioguide_id, is_sponsor)
-        sponsored_bills = format_bills(raw_bills, legislator_bioguide_id)
+        sponsored_bills = format_bills(raw_bills, legislator_bioguide_id, true)
 
         sponsored_bills.each do |sponsored_bill|
           sponsored_bill_event = legislator.clone
@@ -214,7 +214,7 @@ module Agents
         end
       else
         raw_bills = get_bill_information(legislator_bioguide_id, is_sponsor)
-        cosponsored_bills = format_bills(raw_bills, legislator_bioguide_id)
+        cosponsored_bills = format_bills(raw_bills, legislator_bioguide_id, false)
 
         cosponsored_bills.each do |cosponsored_bill|
           cosponsored_bill_event = legislator.clone
@@ -324,7 +324,14 @@ module Agents
     end
 
 
-    def format_bills(results, legislator_bioguide_id)
+    def format_bills(results, legislator_bioguide_id, is_sponsor)
+
+      if is_sponsor
+        type = 'sponsored_bill'
+      else
+        type = 'cosponsored_bill'
+      end
+
       bills = []
       results.each do |result|
         result['legislator_bioguide_id'] = legislator_bioguide_id
@@ -396,8 +403,8 @@ module Agents
     def add_to_memory(value, type)
       memory[type] ||= []
 
-      if memory[type].length == 5
-        memory[type] = memory[type].slice 0...4
+      if memory[type].length == 10
+        memory[type] = memory[type].slice 5...10
       end
 
       memory[type] << value
